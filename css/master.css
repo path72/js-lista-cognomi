@@ -102,6 +102,10 @@ main .input_form #msg button {
 /****************************************************************
 **  DISPLAY RESULT
 */
+#display_result table tr td+td {
+  text-align: left;
+  padding-left: 20px;
+}
 .strong {
   color: var(--purple);
   font-weight: 600;

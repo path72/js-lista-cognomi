@@ -1,6 +1,9 @@
 //###################################################### 
 //
 
+// latinitas switch
+var latinitas = true;
+
 // global variables
 var usrSurnameValue, 
     formErase = false,
@@ -53,7 +56,7 @@ checkBtn.addEventListener('click',
       // surname check
       var index = null;
       for (var i=0; i<surnameList.length; i++) {
-        if (usrSurnameValue == surnameList[i]) index = i;
+        if (usrSurnameValue.toLowerCase() == surnameList[i].toLowerCase()) index = i;
       }
       if (index != null) {
         // surname already in list: show notice
@@ -107,18 +110,25 @@ insertionBtn.addEventListener('click',
     surnameList.sort();
     // surname position & final list content filling
     console.log('-- new surname list -------------------');
-    var index = null;
     usrSurnameValue = usrSurnameValue[0].toUpperCase() + usrSurnameValue.substring(1)
+    var index = null;
     for (var i = 0; i < surnameList.length; i++) {
       console.log('#'+(i+1)+' '+surnameList[i]);
-      if (usrSurnameValue == surnameList[i]) index = i;
-      // resultListHtml.innerHTML += (index == i) ? '<li><span class="strong">#'+(i+1)+' '+surnameList[i]+'</span></li>' : '<li>#'+(i+1)+' '+surnameList[i]+'</li>';
-      resultListHtml.innerHTML += (index == i) ? '<li><span class="strong">'+l2r(i+1)+'. '+surnameList[i]+'</span></li>' : '<li>'+l2r(i+1)+'. '+surnameList[i]+'</li>';
+      var prefix;
+      if (usrSurnameValue == surnameList[i]) { 
+        prefix = '<tr class="strong">'; 
+        index = i; 
+      } 
+      else { 
+        prefix = '<tr>'; 
+      }
+      var pos = (latinitas == true) ? a2l(i+1) : (i+1);
+      resultListHtml.innerHTML += prefix+'<td>'+pos+'</td><td>'+surnameList[i]+'</td><tr>';
     }
     // insertion message
     insertionBtn.className = 'hide';
-    // checkMsgHtml.innerHTML = usrSurnameValue+' è stato aggiunto in posizione <span class="strong">'+(index+1)+'</span>';
-    checkMsgHtml.innerHTML = usrSurnameValue+' è stato aggiunto in posizione <span class="strong">'+l2r(index+1)+'</span>';
+    var pos = (latinitas == true) ? a2l(index+1) : (index+1);
+    checkMsgHtml.innerHTML = usrSurnameValue+' è stato aggiunto in posizione <span class="strong">'+pos+'</span>';
     formErase = true;
     listErase = true;
     // show list
@@ -129,7 +139,7 @@ insertionBtn.addEventListener('click',
 //###################################################### 
 // LATINITAS
 
-function l2r(n) {
+function a2l(n) {
   var r = '';
   if (n>3999) r='impossibilis';
   else {
@@ -144,3 +154,4 @@ function l2r(n) {
 
 //###################################################### 
 //
+
