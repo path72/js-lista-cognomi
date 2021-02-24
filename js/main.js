@@ -50,7 +50,7 @@ checkBtn.addEventListener('click',
       msgHtml.className = 'show';
       checkMsgHtml.innerHTML = 'Compila il campo cognome';
     } else {
-      // surnname check
+      // surname check
       var index = null;
       for (var i=0; i<surnameList.length; i++) {
         if (usrSurnameValue == surnameList[i]) index = i;
@@ -105,7 +105,7 @@ insertionBtn.addEventListener('click',
     }
     // sorting capitalized list
     surnameList.sort();
-    // surname position & final list content
+    // surname position & final list content filling
     console.log('-- new surname list -------------------');
     var index = null;
     usrSurnameValue = usrSurnameValue[0].toUpperCase() + usrSurnameValue.substring(1)
