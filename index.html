@@ -52,7 +52,7 @@
 
       <!-- ** SURNAME FORM ** -->
       <section class="input_form">
-        <h1 class="ms_txt_title">titolo</h1>
+        <h1 class="ms_txt_title">aggiungi cognome alla lista</h1>
         <div class="form_box card">
           <div class="row_in">
             <div class="input_box">
@@ -61,23 +61,25 @@
             </div>
           </div>
           <div class="row_btn">
-            <button id="check_btn">Inserisci</button>
+            <button id="check_btn">Controlla</button>
             <button id="erase_btn">Annulla</button>
           </div>
           <div id="msg" class="hide">
             <div class="msg_content">
               <div id="check_msg"></div>
-              <button id="resume_btn">Riprendi</button>
+              <div class="row_btn">
+                <button id="resume_btn">Torna indietro</button>
+                <button id="insertion_btn" class="hide"><strong>Conferma inserimento</strong></button>
+              </div>
             </div>
           </div>      
         </div> <!--form_box-->
       </section>
 
       <!-- ** DISPLAY RESULT ** -->
-      <section clas="display_result hi-de">
-        <h1 class="ms_txt_title">risultato</h1>
-        <div class="card">
-        </div>  
+      <section id="display_result" class="hide">
+        <h1 class="ms_txt_title">lista</h1>
+        <div class="card"><ul id="result_list"></ul></div>  
       </section>
 
     </main>

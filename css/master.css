@@ -11,6 +11,7 @@
   --white: #eaeaea;
   --black: #3c3c3c;
   --purple: #b91450;
+  --green: #00c864;
 }
 body {
   font-family: 'Inter', sans-serif;
@@ -19,9 +20,14 @@ body {
 }
 main {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+}
+ul {
+  list-style: none;
+  text-align: left;
 }
 
 /****************************************************************
@@ -35,8 +41,9 @@ main .input_form .form_box {
   align-items: center;
 }
 main .input_form .form_box .row_in {
-  display: flex;
-  justify-content: space-around;
+  /* solo per molti campi input */
+  /* display: flex; */
+  /* justify-content: space-around; */
 }
 main .input_form .form_box .row_in .input_box {
   margin: 0 20px;
@@ -77,12 +84,18 @@ main .input_form .form_box #msg {
   border-radius: 5px;
   background-color: var(--white);
 }
-main .msg_content {
+main .input_form .form_box #msg .msg_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+main .input_form .form_box .row_btn button#insertion_btn {
+  background-color: var(--green);
+  outline: var(---green);
+  border: 1px solid var(--green);
+  color: var(--black);
 }
 main .input_form #msg button {
   margin-top: 10px;
@@ -91,15 +104,10 @@ main .input_form #msg button {
 /****************************************************************
 **  DISPLAY RESULT
 */
-main .display_result {
-  /* secondo figlio di flex */
+.strong {
+  color: var(--purple);
+  font-weight: 600;
 }
-
-
-/****************************************************************
-**  X
-*/
-
 
 /****************************************************************
 **  CARD
@@ -117,11 +125,13 @@ main .display_result {
 **  DISPLAY ON/OFF
 */
 .hide {
+  display: none;
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
 }
 .show {
+  display: block;
   visibility: visible;
   opacity: 1;
   transition: all 0.3s;
@@ -137,6 +147,10 @@ button {
   border: 1px solid var(--black);
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.1s;
+}
+button:hover {
+  transform: scale(1.05);
 }
 
 /****************************************************************
