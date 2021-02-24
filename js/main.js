@@ -112,17 +112,35 @@ insertionBtn.addEventListener('click',
     for (var i = 0; i < surnameList.length; i++) {
       console.log('#'+(i+1)+' '+surnameList[i]);
       if (usrSurnameValue == surnameList[i]) index = i;
-      resultListHtml.innerHTML += (index == i) ? '<li><span class="strong">#'+(i+1)+' '+surnameList[i]+'</span></li>' : '<li>#'+(i+1)+' '+surnameList[i]+'</li>';
+      // resultListHtml.innerHTML += (index == i) ? '<li><span class="strong">#'+(i+1)+' '+surnameList[i]+'</span></li>' : '<li>#'+(i+1)+' '+surnameList[i]+'</li>';
+      resultListHtml.innerHTML += (index == i) ? '<li><span class="strong">'+l2r(i+1)+'. '+surnameList[i]+'</span></li>' : '<li>'+l2r(i+1)+'. '+surnameList[i]+'</li>';
     }
     // insertion message
     insertionBtn.className = 'hide';
-    checkMsgHtml.innerHTML = usrSurnameValue+' è stato aggiunto in posizione <span class="strong">#'+(index+1)+'</span>';
+    // checkMsgHtml.innerHTML = usrSurnameValue+' è stato aggiunto in posizione <span class="strong">'+(index+1)+'</span>';
+    checkMsgHtml.innerHTML = usrSurnameValue+' è stato aggiunto in posizione <span class="strong">'+l2r(index+1)+'</span>';
     formErase = true;
     listErase = true;
     // show list
     displayResultHtml.className = 'show';
   }
 );
+
+//###################################################### 
+// LATINITAS
+
+function l2r(n) {
+  var r = '';
+  if (n>3999) r='impossibilis';
+  else {
+    var m=[1,5,10,50,100,500,1000], d=[0,0,0,2,2,4,4], v=['I','V','X','L','C','D','M'];
+    for(var i=6; i>=0; i--){
+      while (n>=m[i]) { r=r+v[i]; n=n-m[i]; }
+      if (i>0){ var di=d[i]; if (n>=m[i]-m[di]) { r=r+v[di]+v[i]; n=n-(m[i]-m[di]); } }
+    }
+  }
+  return r;
+};
 
 //###################################################### 
 //
