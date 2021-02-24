@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *** [ FONTS ] *** -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <!-- *** [ FONT AWESOME ] *** -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" /> -->
+    <!-- *** [ REMOTE BOOTSTRAP ] *** -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <!-- *** [ LOCAL BOOTSTRAP ] *** (@grid-float-breakpoint: @screen-md-min) -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- *** [ MY STYLE CSS ] *** -->
+    <!-- <link rel="stylesheet" href="css/12bool.css"> -->
+    <link rel="stylesheet" href="css/master.css">
+    <!-- *** -->
+    <link rel="shortcut icon" href="#">
+    <title></title>
+  </head>
+  <body>
+
+    <!------------------------------------------
+
+      Ciao ragazzi,
+      Esercizio di oggi:
+
+      cartella/repo js-lista-cognomi
+
+      Lista Cognomi
+
+      1. Chiedere all’utente il cognome
+      
+      2. inserirlo in un array con altri cognomi 
+          
+      3. stampa la lista ordinata alfabeticamente
+      
+      4. scrivi anche la posizione "umana" della lista 
+        in cui il nuovo utente si trova
+
+      Consigli del giorno:
+      1. consultiamo la documentazione W3Schools o MDN 
+      per trovare i metodi javascript 
+      che possono esserci utili.
+
+      Buon lavoro e buon divertimento!
+
+    ------------------------------------------->
+
+    <main>
+
+      <!-- ** SURNAME FORM ** -->
+      <section class="input_form">
+        <h1 class="ms_txt_title">titolo</h1>
+        <div class="form_box card">
+          <div class="row_in">
+            <div class="input_box">
+              <label for="usr_surname" class="ms_txt_1">Cognome</label>
+              <input id="usr_surname" type="text" name="usr_surname" placeholder="inserisci il tuo cognome" required>
+            </div>
+          </div>
+          <div class="row_btn">
+            <button id="check_btn">Inserisci</button>
+            <button id="erase_btn">Annulla</button>
+          </div>
+          <div id="msg" class="hide">
+            <div class="msg_content">
+              <div id="check_msg"></div>
+              <button id="resume_btn">Riprendi</button>
+            </div>
+          </div>      
+        </div> <!--form_box-->
+      </section>
+
+      <!-- ** DISPLAY RESULT ** -->
+      <section clas="display_result hi-de">
+        <h1 class="ms_txt_title">risultato</h1>
+        <div class="card">
+        </div>  
+      </section>
+
+    </main>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+</html>
